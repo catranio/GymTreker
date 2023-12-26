@@ -1,0 +1,143 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld" : {
+
+    },
+    "0" : {
+
+    },
+    "0.0" : {
+
+    },
+    "Add" : {
+
+    },
+    "Add exercieses" : {
+
+    },
+    "Add exercises" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавь упражнений"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+
+    },
+    "Castom" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Личные тренировки"
+          }
+        }
+      }
+    },
+    "Create" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Создать"
+          }
+        }
+      }
+    },
+    "Create workout" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Создать тренировку"
+          }
+        }
+      }
+    },
+    "Create your first custom workout" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Создай свою первую личную тренировку"
+          }
+        }
+      }
+    },
+    "Do only the exercises you need to do" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выполняй только те упражнения, которые тебе необходимы"
+          }
+        }
+      }
+    },
+    "Exerciese with title \"%@\" already exist. Rewrite it?" : {
+
+    },
+    "Exercises" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Упражнения"
+          }
+        }
+      }
+    },
+    "kg" : {
+
+    },
+    "Report" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Статистика"
+          }
+        }
+      }
+    },
+    "reps" : {
+
+    },
+    "Rewrite" : {
+
+    },
+    "Save" : {
+
+    },
+    "some" : {
+
+    },
+    "Some header" : {
+
+    },
+    "support" : {
+
+    },
+    "Workout" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тренировка"
+          }
+        }
+      }
+    },
+    "x2" : {
+
+    }
+  },
+  "version" : "1.0"
+}
