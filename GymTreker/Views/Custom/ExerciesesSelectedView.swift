@@ -11,7 +11,7 @@ struct SetsEditView: View {
 		return formatter
 	}()
 
-    var body: some View {
+	var body: some View {
 		VStack {
 			List {
 				ForEach($sets) { $set in
@@ -48,7 +48,7 @@ struct SetsEditView: View {
 			.padding(0)
 		}
 		.background(Color.App.background)
-    }
+	}
 
 	func move(from source: IndexSet, to destination: Int) {
 		sets.move(fromOffsets: source, toOffset: destination)

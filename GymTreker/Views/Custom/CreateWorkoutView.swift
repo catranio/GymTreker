@@ -67,7 +67,8 @@ struct CreateWorkoutView: View {
 										draggedExerciese = exercise
 										return NSItemProvider(contentsOf: URL(string: "\(exercise.id)"))!
 									}
-									.onDrop(of: [.item], delegate: ExercieseEditDropViewDelegate(item: exercise, items: $exercises, draggedItem: $draggedExerciese))
+									.onDrop(of: [.item],
+											delegate: ExercieseEditDropViewDelegate(item: exercise, items: $exercises, draggedItem: $draggedExerciese))
 									.padding(.horizontal)
 									.padding(.top)
 							}

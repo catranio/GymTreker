@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		450A6BDC2B42EC21004DFA69 /* ExerciesEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450A6BDB2B42EC21004DFA69 /* ExerciesEditView.swift */; };
 		450A6BDE2B42EE3B004DFA69 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450A6BDD2B42EE3B004DFA69 /* ExerciseModel.swift */; };
-		453702C92B49656000987A81 /* .swiftlint in Resources */ = {isa = PBXBuildFile; fileRef = 453702C82B49656000987A81 /* .swiftlint */; };
 		455BB8682B3B63AC00092E85 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BB8672B3B63AC00092E85 /* App.swift */; };
 		455BB86A2B3B63AC00092E85 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BB8692B3B63AC00092E85 /* MainView.swift */; };
 		455BB86C2B3B63AD00092E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455BB86B2B3B63AD00092E85 /* Assets.xcassets */; };
@@ -34,7 +33,6 @@
 /* Begin PBXFileReference section */
 		450A6BDB2B42EC21004DFA69 /* ExerciesEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciesEditView.swift; sourceTree = "<group>"; };
 		450A6BDD2B42EE3B004DFA69 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
-		453702C82B49656000987A81 /* .swiftlint */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint; sourceTree = "<group>"; };
 		455BB8642B3B63AC00092E85 /* GymTreker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymTreker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		455BB8672B3B63AC00092E85 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		455BB8692B3B63AC00092E85 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 		455BB85B2B3B63AC00092E85 = {
 			isa = PBXGroup;
 			children = (
-				453702C82B49656000987A81 /* .swiftlint */,
 				455BB8662B3B63AC00092E85 /* GymTreker */,
 				455BB8652B3B63AC00092E85 /* Products */,
 			);
@@ -239,7 +236,6 @@
 			files = (
 				45C163872B3DA84E009717C5 /* exercises.json in Resources */,
 				455BB86F2B3B63AD00092E85 /* Preview Assets.xcassets in Resources */,
-				453702C92B49656000987A81 /* .swiftlint in Resources */,
 				455BB87B2B3B780300092E85 /* Localizable.xcstrings in Resources */,
 				455BB86C2B3B63AD00092E85 /* Assets.xcassets in Resources */,
 			);
@@ -250,6 +246,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		453702C72B49625000987A81 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);

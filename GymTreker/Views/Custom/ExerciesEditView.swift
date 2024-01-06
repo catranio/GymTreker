@@ -5,7 +5,7 @@ struct ExerciesEditView: View {
 
 	@State private var isOpened: Bool = true
 
-    var body: some View {
+	var body: some View {
 		LazyVStack(spacing: 0) {
 			Button {
 				withAnimation {
@@ -39,9 +39,11 @@ struct ExerciesEditView: View {
 		.frame(maxWidth: .infinity)
 		.background(Color.App.background)
 		.clipShape(.rect(cornerRadius: 15))
-    }
+	}
 }
 
 #Preview {
-	ExerciesEditView(exercise: .constant(ExerciseModel(title: "Жим лежа", tags: ["Грудь", "Спина"], weight: .free, sets: [.init(reps: 0, weight: 0.0)])))
+	ExerciesEditView(exercise: .constant(
+		ExerciseModel(title: "Жим лежа", tags: ["Грудь", "Спина"], weight: .free, sets: [.init(reps: 0, weight: 0.0)]
+					 )))
 }

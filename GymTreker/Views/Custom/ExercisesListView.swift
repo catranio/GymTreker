@@ -29,9 +29,7 @@ struct ExercisesListView: View {
 					}
 					.onAppear {
 						for exercise in selectedExercises {
-							if let id = readJsonExercises.filter({ $0.title == exercise.title }).first?.id {
-								selection.insert(id)
-							}
+							selection.insert(exercise.id)
 						}
 					}
 				}
@@ -42,15 +40,11 @@ struct ExercisesListView: View {
 
 				Button("Add exercieses") {
 					let filterExerciese = readJsonExercises.filter { selection.contains($0.id) }
-					for item in filterExerciese {
-						if !selectedExercises.contains(where: { $0.title == item.title }) {
-							selectedExercises.append(item)
-						}
+					for item in filterExerciese where !selectedExercises.contains(where: { $0.title == item.title }) {
+						selectedExercises.append(item)
 					}
-					for item in selectedExercises {
-						if !filterExerciese.contains(where: { $0.title == item.title }) {
-							selectedExercises.removeAll { $0.id == item.id }
-						}
+					for item in selectedExercises where !filterExerciese.contains(where: { $0.title == item.title }) {
+						selectedExercises.removeAll { $0.id == item.id }
 					}
 					presentationMode.wrappedValue.dismiss()
 				}
@@ -62,7 +56,8 @@ struct ExercisesListView: View {
 		}
 	}
 
-	@ViewBuilder func cellView(_ exercise: ExerciseModel) -> some View {
+	@ViewBuilder
+	func cellView(_ exercise: ExerciseModel) -> some View {
 		HStack {
 			Image("Dumbbell")
 				.resizable()
@@ -98,10 +93,8 @@ struct ExercisesListView: View {
 			return true
 		}
 
-		for tag in exercise.tags {
-			if tag.lowercased().contains(searchText.lowercased()) {
-				return true
-			}
+		for tag in exercise.tags where tag.lowercased().contains(searchText.lowercased()) {
+			return true
 		}
 
 		return false
