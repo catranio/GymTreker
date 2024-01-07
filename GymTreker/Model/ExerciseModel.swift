@@ -1,11 +1,20 @@
 import Foundation
+import SwiftUI
 
-struct ExerciseModel: Identifiable, Codable, Equatable {
+struct ExerciseModel: Identifiable, Codable, Equatable, Transferable {
+	static var transferRepresentation: some TransferRepresentation {
+		CodableRepresentation(for: ExerciseModel.self, contentType: .item)
+	}
+
 	private enum CodingKeys: String, CodingKey {
 		case title, tags, weight, sets
 	}
 
-	struct Set: Identifiable, Codable, Equatable {
+	struct Set: Identifiable, Codable, Equatable, Transferable {
+		static var transferRepresentation: some TransferRepresentation {
+			CodableRepresentation(for: Set.self, contentType: .item)
+		}
+
 		private (set) var id = UUID()
 		var reps: Int
 		var weight: Double

@@ -1,38 +1,16 @@
 import SwiftUI
 
-struct ExercieseEditDropViewDelegate: DropDelegate {
-	let item: ExerciseModel
-	@Binding var items: [ExerciseModel]
-	@Binding var draggedItem: ExerciseModel?
-
-	func performDrop(info: DropInfo) -> Bool {
-		true
-	}
-
-	func dropEntered(info: DropInfo) {
-		guard let draggedItem = self.draggedItem else {
-			return
-		}
-
-		if draggedItem != item {
-			let from = items.firstIndex(of: draggedItem)!
-			let to = items.firstIndex(of: item)!
-			withAnimation(.default) {
-				self.items.move(fromOffsets: IndexSet(integer: from), toOffset: to > from ? to + 1 : to)
-			}
-		}
-	}
-}
-
-struct CreateWorkoutView: View {
+struct CreateWorkoutView: View, KeyboardReadable {
 	@State var title = ""
 	@Binding var workouts: [WorkoutModel]
 
 	@State private var isPresentExercieseList = false
 	@State private var exercises: [ExerciseModel] = []
-	@State private var draggedExerciese: ExerciseModel?
+	@State private var draggingExercieseItem: ExerciseModel?
 	@State private var isExistByTitle: Bool = false
 	@State private var isEditMode: Bool = false
+	@State private var isKeyboardVisible: Bool = false
+	@GestureState private var isPrepareToDelete = false
 
 	@Environment(\.presentationMode) var presentationMode
 
@@ -60,17 +38,38 @@ struct CreateWorkoutView: View {
 					}
 				} else {
 					ScrollView {
-						VStack {
+						LazyVStack(spacing: 20) {
 							ForEach($exercises) { $exercise in
-								ExerciesEditView(exercise: $exercise)
-									.onDrag {
-										draggedExerciese = exercise
-										return NSItemProvider(contentsOf: URL(string: "\(exercise.id)"))!
+								ExerciesEditView(exercise: $exercise, exercises: $exercises)
+//									.onDrag {
+//										draggingExercieseItem = exercise
+//										return NSItemProvider(contentsOf: URL(string: "\(exercise.id)"))!
+//									}
+//									.onDrop(of: [.item],
+//											delegate: DropViewDelegate(item: exercise, items: $exercises, draggedItem: $draggingExercieseItem))
+									.draggable(exercise) {
+										Rectangle()
+											.fill(Color.App.background)
+											.frame(width: 1, height: 1)
+											.onAppear {
+												draggingExercieseItem = exercise
+											}
 									}
-									.onDrop(of: [.item],
-											delegate: ExercieseEditDropViewDelegate(item: exercise, items: $exercises, draggedItem: $draggedExerciese))
+									.dropDestination(for: ExerciseModel.self) { _, _ in
+										draggingExercieseItem = nil
+										return false
+									} isTargeted: { status in
+										if let draggingExercieseItem, status, draggingExercieseItem != exercise {
+											if let sourceIndex = exercises.firstIndex(of: draggingExercieseItem),
+											   let destenationIndex = exercises.firstIndex(of: exercise) {
+												withAnimation(.bouncy) {
+													let sourceItem = exercises.remove(at: sourceIndex)
+													exercises.insert(sourceItem, at: destenationIndex)
+												}
+											}
+										}
+									}
 									.padding(.horizontal)
-									.padding(.top)
 							}
 							Rectangle()
 								.foregroundStyle(.clear)
@@ -78,29 +77,31 @@ struct CreateWorkoutView: View {
 						}
 					}
 					.overlay(alignment: .bottomTrailing) {
-						Button {
-							isPresentExercieseList = true
-						} label: {
-							Image(systemName: "plus")
-						}
-						.foregroundStyle(.white)
-						.buttonStyle(.plain)
-						.frame(width: 65, height: 65)
-						.font(.system(size: 36))
-						.fontWeight(.bold)
-						.background(
-							LinearGradient(colors: [
-								Color.App.blue,
-								Color.App.purple
-							], startPoint: .leading, endPoint: .trailing))
-						.clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-						.padding()
-						.sheet(isPresented: $isPresentExercieseList) {
-							ExercisesListView(selectedExercises: $exercises)
+						if !isKeyboardVisible {
+							Button {
+								isPresentExercieseList = true
+							} label: {
+								Image(systemName: "plus")
+							}
+							.foregroundStyle(.white)
+							.buttonStyle(.plain)
+							.frame(width: 65, height: 65)
+							.font(.system(size: 36))
+							.fontWeight(.bold)
+							.background(
+								LinearGradient(colors: [
+									Color.App.blue,
+									Color.App.purple
+								], startPoint: .leading, endPoint: .trailing))
+							.clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+							.padding()
+							.sheet(isPresented: $isPresentExercieseList) {
+								ExercisesListView(selectedExercises: $exercises)
+							}
 						}
 					}
 				}
-				if !exercises.isEmpty {
+				if !exercises.isEmpty && !isKeyboardVisible {
 					Button("Save") {
 						if !workouts.contains(where: { $0.title == title }) || isEditMode {
 							workouts.removeAll { $0.title == title }
@@ -144,6 +145,11 @@ struct CreateWorkoutView: View {
 				title = ""
 				exercises = []
 				isEditMode = false
+			}
+			.onReceive(keyboardPublisher) { newIsKeyboardVisible in
+				withAnimation(.snappy) {
+					isKeyboardVisible = newIsKeyboardVisible
+				}
 			}
 		}
 	}

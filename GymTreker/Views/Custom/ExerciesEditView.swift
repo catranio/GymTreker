@@ -2,16 +2,13 @@ import SwiftUI
 
 struct ExerciesEditView: View {
 	@Binding var exercise: ExerciseModel
-
+	@Binding var exercises: [ExerciseModel]
 	@State private var isOpened: Bool = true
+	@GestureState private var isTappedHeader: Bool = false
 
 	var body: some View {
-		LazyVStack(spacing: 0) {
-			Button {
-				withAnimation {
-					isOpened.toggle()
-				}
-			} label: {
+		SwipeView {
+			LazyVStack(spacing: 0) {
 				HStack {
 					Text(exercise.title)
 						.font(.headline)
@@ -27,23 +24,44 @@ struct ExerciesEditView: View {
 						.fontWeight(.bold)
 				}
 				.contentShape(Rectangle())
-			}
-			.buttonStyle(.plain)
+				.gesture(DragGesture(minimumDistance: 0)
+					.updating($isTappedHeader) { _, isTappedHeader, _ in isTappedHeader = true }
+					.onEnded({ _ in
+						withAnimation {
+							isOpened.toggle()
+						}
+					})
+				)
 
-			SetsEditView(type: $exercise.weight, sets: $exercise.sets)
-				.frame(height: isOpened ? nil : 0, alignment: .top)
-				.padding(.top, isOpened ? nil : 0)
-				.clipped()
+				SetsEditView(type: $exercise.weight, sets: $exercise.sets)
+					.frame(height: isOpened ? nil : 0, alignment: .top)
+					.padding(.top, isOpened ? nil : 0)
+					.clipped()
+			}
+			.padding()
+			.frame(maxWidth: .infinity)
+			.background(Color.App.background)
+			.clipShape(.rect(cornerRadius: 15))
+		} trailingActions: { _ in
+			SwipeAction(systemImage: "trash", backgroundColor: .red) {
+				withAnimation(.snappy) {
+					exercises.removeAll { $0 == exercise }
+				}
+			}
+			.allowSwipeToTrigger(true)
+			.font(.title3.weight(.medium))
+			.foregroundColor(.white)
 		}
-		.padding()
-		.frame(maxWidth: .infinity)
-		.background(Color.App.background)
-		.clipShape(.rect(cornerRadius: 15))
+		.swipeActionsStyle(.cascade)
+		.swipeActionCornerRadius(15)
+		.swipeActionsMaskCornerRadius(0)
+		.swipeEnabled(isTappedHeader)
 	}
 }
 
 #Preview {
 	ExerciesEditView(exercise: .constant(
-		ExerciseModel(title: "Жим лежа", tags: ["Грудь", "Спина"], weight: .free, sets: [.init(reps: 0, weight: 0.0)]
-					 )))
+		ExerciseModel(title: "Жим лежа", tags: ["Грудь", "Спина"], weight: .free, sets: [.init(reps: 0, weight: 0.0)])),
+					 exercises: .constant([])
+	)
 }

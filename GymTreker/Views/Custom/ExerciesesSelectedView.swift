@@ -1,44 +1,78 @@
 import SwiftUI
 
+struct DropMoveViewDelegate: DropDelegate {
+	func performDrop(info: DropInfo) -> Bool {
+		true
+	}
+	
+	func dropUpdated(info: DropInfo) -> DropProposal? {
+		DropProposal(operation: .move)
+	}
+}
+
+
 struct SetsEditView: View {
 	@Binding var type: ExerciseModel.Weight
 	@Binding var sets: [ExerciseModel.Set]
-	private let rowHeight: CGFloat = 40
 	@State private var numberFormatter: NumberFormatter = {
 		var formatter = NumberFormatter()
 		formatter.zeroSymbol = ""
 		formatter.numberStyle = .decimal
 		return formatter
 	}()
+	@State private var draggingSetItem: ExerciseModel.Set?
 
 	var body: some View {
 		VStack {
-			List {
-				ForEach($sets) { $set in
-					if let idx = sets.firstIndex(of: set) {
+			ForEach($sets) { $set in
+				if let idx = sets.firstIndex(of: set) {
+					SwipeView {
 						setEditView(index: idx + 1, weight: $set.weight, repeates: $set.reps)
-							.listRowSeparator(.hidden)
-							.listRowBackground(Color.App.background)
-							.listRowInsets(EdgeInsets())
-							.frame(maxHeight: rowHeight)
+					} trailingActions: { _ in
+						SwipeAction(systemImage: "trash", backgroundColor: .red) {
+							withAnimation(.snappy) {
+								sets.removeAll { $0 == set }
+							}
+						}
+						.allowSwipeToTrigger(true)
+						.font(.title3.weight(.medium))
+						.foregroundColor(.white)
 					}
-				}
-				.onDelete { indexSet in
-					withAnimation(.snappy) {
-						sets.remove(atOffsets: indexSet)
+					.swipeActionsStyle(.cascade)
+					.swipeActionCornerRadius(0)
+					.swipeActionsMaskCornerRadius(0)
+					.padding(.vertical, 6)
+					.padding(.horizontal)
+//					.onDrag {
+//						draggingSetItem = set
+//						return NSItemProvider(contentsOf: URL(string: "\(set.id)"))!
+//					}
+//					.onDrop(of: [.item],
+//							delegate: SetDropViewDelegate(item: set, items: $sets, draggedItem: $draggingSetItem))
+					.draggable(set) {
+						Rectangle()
+							.fill(Color.App.background)
+							.frame(width: 1, height: 1)
+							.onAppear {
+								draggingSetItem = set
+							}
 					}
-				}
-				.onMove { indices, newOffset in
-					sets.move(fromOffsets: indices, toOffset: newOffset)
+					.dropDestination(for: ExerciseModel.self) { _, _ in
+						draggingSetItem = nil
+						return false
+					} isTargeted: { status in
+						if let draggingSetItem, status, draggingSetItem != set {
+							if let sourceIndex = sets.firstIndex(of: draggingSetItem),
+							   let destenationIndex = sets.firstIndex(of: set) {
+								withAnimation(.bouncy) {
+									let sourceItem = sets.remove(at: sourceIndex)
+									sets.insert(sourceItem, at: destenationIndex)
+								}
+							}
+						}
+					}
 				}
 			}
-			.background(Color.App.background)
-			.scrollContentBackground(.hidden)
-			.listStyle(.inset)
-			.frame(height: CGFloat(sets.count) * rowHeight)
-			.scrollDisabled(true)
-			.environment(\.defaultMinListRowHeight, rowHeight)
-
 			Button("Add") {
 				withAnimation(.snappy) {
 					sets.append(.init(reps: sets.last?.reps ?? 0, weight: sets.last?.weight ?? 0))

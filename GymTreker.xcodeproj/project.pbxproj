@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		450A6BDC2B42EC21004DFA69 /* ExerciesEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450A6BDB2B42EC21004DFA69 /* ExerciesEditView.swift */; };
 		450A6BDE2B42EE3B004DFA69 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450A6BDD2B42EE3B004DFA69 /* ExerciseModel.swift */; };
+		453702CD2B49882B00987A81 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453702CC2B49882B00987A81 /* SwiftUIView.swift */; };
 		455BB8682B3B63AC00092E85 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BB8672B3B63AC00092E85 /* App.swift */; };
 		455BB86A2B3B63AC00092E85 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BB8692B3B63AC00092E85 /* MainView.swift */; };
 		455BB86C2B3B63AD00092E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455BB86B2B3B63AD00092E85 /* Assets.xcassets */; };
@@ -16,6 +17,8 @@
 		455BB87B2B3B780300092E85 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 455BB87A2B3B780300092E85 /* Localizable.xcstrings */; };
 		455BB87E2B3B802300092E85 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BB87D2B3B802300092E85 /* CustomView.swift */; };
 		455BB8802B3B847000092E85 /* CreateNewWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BB87F2B3B847000092E85 /* CreateNewWorkoutView.swift */; };
+		456FB2102B4B56580072C83D /* KeyboardReadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456FB20F2B4B56580072C83D /* KeyboardReadable.swift */; };
+		456FB2122B4B607F0072C83D /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456FB2112B4B607F0072C83D /* DropViewDelegate.swift */; };
 		4573B5CE2B3CC4A30020226C /* ExercisesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4573B5CD2B3CC4A30020226C /* ExercisesListView.swift */; };
 		45A580282B3DB31700D69DF6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A580272B3DB31700D69DF6 /* Color.swift */; };
 		45A5802E2B3DB7A800D69DF6 /* ReadJsonFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A5802D2B3DB7A800D69DF6 /* ReadJsonFile.swift */; };
@@ -23,7 +26,7 @@
 		45B030CA2B45491700B6879E /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B030C92B45491700B6879E /* WorkoutModel.swift */; };
 		45B030CC2B45499900B6879E /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B030CB2B45499900B6879E /* Array.swift */; };
 		45B030CE2B45BDA800B6879E /* ExerciesesSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B030CD2B45BDA800B6879E /* ExerciesesSelectedView.swift */; };
-		45B030D02B45DA0800B6879E /* SwipeActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B030CF2B45DA0800B6879E /* SwipeActionView.swift */; };
+		45B030D02B45DA0800B6879E /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B030CF2B45DA0800B6879E /* SwipeView.swift */; };
 		45B030D22B45E2BB00B6879E /* CollapsibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B030D12B45E2BB00B6879E /* CollapsibleView.swift */; };
 		45C163872B3DA84E009717C5 /* exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = 45C163862B3DA84E009717C5 /* exercises.json */; };
 		45D84CB82B3C61EA00F8443A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D84CB72B3C61EA00F8443A /* Buttons.swift */; };
@@ -33,6 +36,7 @@
 /* Begin PBXFileReference section */
 		450A6BDB2B42EC21004DFA69 /* ExerciesEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciesEditView.swift; sourceTree = "<group>"; };
 		450A6BDD2B42EE3B004DFA69 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
+		453702CC2B49882B00987A81 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		455BB8642B3B63AC00092E85 /* GymTreker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymTreker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		455BB8672B3B63AC00092E85 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		455BB8692B3B63AC00092E85 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -41,6 +45,8 @@
 		455BB87A2B3B780300092E85 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		455BB87D2B3B802300092E85 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		455BB87F2B3B847000092E85 /* CreateNewWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewWorkoutView.swift; sourceTree = "<group>"; };
+		456FB20F2B4B56580072C83D /* KeyboardReadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardReadable.swift; sourceTree = "<group>"; };
+		456FB2112B4B607F0072C83D /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
 		4573B5CD2B3CC4A30020226C /* ExercisesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesListView.swift; sourceTree = "<group>"; };
 		45A580272B3DB31700D69DF6 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		45A5802D2B3DB7A800D69DF6 /* ReadJsonFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadJsonFile.swift; sourceTree = "<group>"; };
@@ -48,7 +54,7 @@
 		45B030C92B45491700B6879E /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		45B030CB2B45499900B6879E /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		45B030CD2B45BDA800B6879E /* ExerciesesSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciesesSelectedView.swift; sourceTree = "<group>"; };
-		45B030CF2B45DA0800B6879E /* SwipeActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionView.swift; sourceTree = "<group>"; };
+		45B030CF2B45DA0800B6879E /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		45B030D12B45E2BB00B6879E /* CollapsibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleView.swift; sourceTree = "<group>"; };
 		45C163862B3DA84E009717C5 /* exercises.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exercises.json; sourceTree = "<group>"; };
 		45D84CB72B3C61EA00F8443A /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
@@ -160,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				45A5802D2B3DB7A800D69DF6 /* ReadJsonFile.swift */,
+				456FB20F2B4B56580072C83D /* KeyboardReadable.swift */,
+				456FB2112B4B607F0072C83D /* DropViewDelegate.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -168,8 +176,9 @@
 			isa = PBXGroup;
 			children = (
 				45D84CB72B3C61EA00F8443A /* Buttons.swift */,
-				45B030CF2B45DA0800B6879E /* SwipeActionView.swift */,
+				45B030CF2B45DA0800B6879E /* SwipeView.swift */,
 				45B030D12B45E2BB00B6879E /* CollapsibleView.swift */,
+				453702CC2B49882B00987A81 /* SwiftUIView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -260,7 +269,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint --fix && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -271,11 +280,13 @@
 			files = (
 				4573B5CE2B3CC4A30020226C /* ExercisesListView.swift in Sources */,
 				45D84CB82B3C61EA00F8443A /* Buttons.swift in Sources */,
+				453702CD2B49882B00987A81 /* SwiftUIView.swift in Sources */,
 				455BB86A2B3B63AC00092E85 /* MainView.swift in Sources */,
 				45B030CA2B45491700B6879E /* WorkoutModel.swift in Sources */,
 				45A5802E2B3DB7A800D69DF6 /* ReadJsonFile.swift in Sources */,
 				455BB8802B3B847000092E85 /* CreateNewWorkoutView.swift in Sources */,
 				45B030CC2B45499900B6879E /* Array.swift in Sources */,
+				456FB2122B4B607F0072C83D /* DropViewDelegate.swift in Sources */,
 				45B030D22B45E2BB00B6879E /* CollapsibleView.swift in Sources */,
 				455BB87E2B3B802300092E85 /* CustomView.swift in Sources */,
 				45A580282B3DB31700D69DF6 /* Color.swift in Sources */,
@@ -283,9 +294,10 @@
 				450A6BDC2B42EC21004DFA69 /* ExerciesEditView.swift in Sources */,
 				45B030CE2B45BDA800B6879E /* ExerciesesSelectedView.swift in Sources */,
 				45D84CBA2B3C62DF00F8443A /* CreateWorkoutView.swift in Sources */,
-				45B030D02B45DA0800B6879E /* SwipeActionView.swift in Sources */,
+				45B030D02B45DA0800B6879E /* SwipeView.swift in Sources */,
 				455BB8682B3B63AC00092E85 /* App.swift in Sources */,
 				45B030C82B452FDD00B6879E /* Button.swift in Sources */,
+				456FB2102B4B56580072C83D /* KeyboardReadable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,7 +29,9 @@ struct ExercisesListView: View {
 					}
 					.onAppear {
 						for exercise in selectedExercises {
-							selection.insert(exercise.id)
+							if let id = readJsonExercises.first(where: { $0.title == exercise.title })?.id {
+								selection.insert(id)
+							}
 						}
 					}
 				}
