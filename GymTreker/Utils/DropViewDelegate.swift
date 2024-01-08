@@ -1,12 +1,22 @@
 import SwiftUI
 
+struct DropOutsideDelegate<Item: Equatable>: DropDelegate {
+	@Binding var current: Item?
+
+	func performDrop(info: DropInfo) -> Bool {
+		current = nil
+		return true
+	}
+}
+
 struct DropViewDelegate<Item: Equatable>: DropDelegate {
 	let item: Item
 	@Binding var items: [Item]
 	@Binding var draggedItem: Item?
 
 	func performDrop(info: DropInfo) -> Bool {
-		true
+		self.draggedItem = nil
+		return true
 	}
 
 	func dropEntered(info: DropInfo) {

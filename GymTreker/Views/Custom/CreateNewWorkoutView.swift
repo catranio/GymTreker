@@ -86,7 +86,7 @@ struct CreateNewWorkoutView: View {
 								draggingWorkoutItem = workout
 								return NSItemProvider(contentsOf: URL(string: "\(workout.id)"))!
 							}
-							.onDrop(of: [.item],
+							.onDrop(of: [.workout],
 									delegate: DropViewDelegate(item: workout, items: $workouts, draggedItem: $draggingWorkoutItem))
 							.sheet(item: $selectedWorout) { workout in
 								CreateWorkoutView(title: workout.title, workouts: $workouts)

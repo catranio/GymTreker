@@ -41,34 +41,12 @@ struct CreateWorkoutView: View, KeyboardReadable {
 						LazyVStack(spacing: 20) {
 							ForEach($exercises) { $exercise in
 								ExerciesEditView(exercise: $exercise, exercises: $exercises)
-//									.onDrag {
-//										draggingExercieseItem = exercise
-//										return NSItemProvider(contentsOf: URL(string: "\(exercise.id)"))!
-//									}
-//									.onDrop(of: [.item],
-//											delegate: DropViewDelegate(item: exercise, items: $exercises, draggedItem: $draggingExercieseItem))
-									.draggable(exercise) {
-										Rectangle()
-											.fill(Color.App.background)
-											.frame(width: 1, height: 1)
-											.onAppear {
-												draggingExercieseItem = exercise
-											}
+									.onDrag {
+										draggingExercieseItem = exercise
+										return NSItemProvider(contentsOf: URL(string: "\(exercise.id)"))!
 									}
-									.dropDestination(for: ExerciseModel.self) { _, _ in
-										draggingExercieseItem = nil
-										return false
-									} isTargeted: { status in
-										if let draggingExercieseItem, status, draggingExercieseItem != exercise {
-											if let sourceIndex = exercises.firstIndex(of: draggingExercieseItem),
-											   let destenationIndex = exercises.firstIndex(of: exercise) {
-												withAnimation(.bouncy) {
-													let sourceItem = exercises.remove(at: sourceIndex)
-													exercises.insert(sourceItem, at: destenationIndex)
-												}
-											}
-										}
-									}
+									.onDrop(of: [.exerciese],
+											delegate: DropViewDelegate(item: exercise, items: $exercises, draggedItem: $draggingExercieseItem))
 									.padding(.horizontal)
 							}
 							Rectangle()

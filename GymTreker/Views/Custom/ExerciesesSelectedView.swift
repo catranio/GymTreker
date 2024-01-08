@@ -4,12 +4,11 @@ struct DropMoveViewDelegate: DropDelegate {
 	func performDrop(info: DropInfo) -> Bool {
 		true
 	}
-	
+
 	func dropUpdated(info: DropInfo) -> DropProposal? {
 		DropProposal(operation: .move)
 	}
 }
-
 
 struct SetsEditView: View {
 	@Binding var type: ExerciseModel.Weight
@@ -43,34 +42,12 @@ struct SetsEditView: View {
 					.swipeActionsMaskCornerRadius(0)
 					.padding(.vertical, 6)
 					.padding(.horizontal)
-//					.onDrag {
-//						draggingSetItem = set
-//						return NSItemProvider(contentsOf: URL(string: "\(set.id)"))!
-//					}
-//					.onDrop(of: [.item],
-//							delegate: SetDropViewDelegate(item: set, items: $sets, draggedItem: $draggingSetItem))
-					.draggable(set) {
-						Rectangle()
-							.fill(Color.App.background)
-							.frame(width: 1, height: 1)
-							.onAppear {
-								draggingSetItem = set
-							}
+					.onDrag {
+						draggingSetItem = set
+						return NSItemProvider(contentsOf: URL(string: "\(set.id)"))!
 					}
-					.dropDestination(for: ExerciseModel.self) { _, _ in
-						draggingSetItem = nil
-						return false
-					} isTargeted: { status in
-						if let draggingSetItem, status, draggingSetItem != set {
-							if let sourceIndex = sets.firstIndex(of: draggingSetItem),
-							   let destenationIndex = sets.firstIndex(of: set) {
-								withAnimation(.bouncy) {
-									let sourceItem = sets.remove(at: sourceIndex)
-									sets.insert(sourceItem, at: destenationIndex)
-								}
-							}
-						}
-					}
+					.onDrop(of: [.item],
+							delegate: DropViewDelegate(item: set, items: $sets, draggedItem: $draggingSetItem))
 				}
 			}
 			Button("Add") {

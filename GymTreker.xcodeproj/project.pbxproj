@@ -10,6 +10,7 @@
 		450A6BDC2B42EC21004DFA69 /* ExerciesEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450A6BDB2B42EC21004DFA69 /* ExerciesEditView.swift */; };
 		450A6BDE2B42EE3B004DFA69 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450A6BDD2B42EE3B004DFA69 /* ExerciseModel.swift */; };
 		453702CD2B49882B00987A81 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453702CC2B49882B00987A81 /* SwiftUIView.swift */; };
+		4546A61B2B4C610200F5B3CC /* UTType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546A61A2B4C610200F5B3CC /* UTType.swift */; };
 		455BB8682B3B63AC00092E85 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BB8672B3B63AC00092E85 /* App.swift */; };
 		455BB86A2B3B63AC00092E85 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BB8692B3B63AC00092E85 /* MainView.swift */; };
 		455BB86C2B3B63AD00092E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455BB86B2B3B63AD00092E85 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		450A6BDB2B42EC21004DFA69 /* ExerciesEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciesEditView.swift; sourceTree = "<group>"; };
 		450A6BDD2B42EE3B004DFA69 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
 		453702CC2B49882B00987A81 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		4546A61A2B4C610200F5B3CC /* UTType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTType.swift; sourceTree = "<group>"; };
 		455BB8642B3B63AC00092E85 /* GymTreker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymTreker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		455BB8672B3B63AC00092E85 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		455BB8692B3B63AC00092E85 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		45B030CF2B45DA0800B6879E /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		45B030D12B45E2BB00B6879E /* CollapsibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleView.swift; sourceTree = "<group>"; };
 		45C163862B3DA84E009717C5 /* exercises.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exercises.json; sourceTree = "<group>"; };
+		45CD21232B4C651C009E2C23 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45D84CB72B3C61EA00F8443A /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		45D84CB92B3C62DF00F8443A /* CreateWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +138,7 @@
 		45A580242B3DAD7100D69DF6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				45CD21232B4C651C009E2C23 /* Info.plist */,
 				45C163862B3DA84E009717C5 /* exercises.json */,
 				455BB86B2B3B63AD00092E85 /* Assets.xcassets */,
 				455BB86D2B3B63AD00092E85 /* Preview Content */,
@@ -149,6 +153,7 @@
 				45A580272B3DB31700D69DF6 /* Color.swift */,
 				45B030C72B452FDD00B6879E /* Button.swift */,
 				45B030CB2B45499900B6879E /* Array.swift */,
+				4546A61A2B4C610200F5B3CC /* UTType.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				450A6BDE2B42EE3B004DFA69 /* ExerciseModel.swift in Sources */,
 				450A6BDC2B42EC21004DFA69 /* ExerciesEditView.swift in Sources */,
 				45B030CE2B45BDA800B6879E /* ExerciesesSelectedView.swift in Sources */,
+				4546A61B2B4C610200F5B3CC /* UTType.swift in Sources */,
 				45D84CBA2B3C62DF00F8443A /* CreateWorkoutView.swift in Sources */,
 				45B030D02B45DA0800B6879E /* SwipeView.swift in Sources */,
 				455BB8682B3B63AC00092E85 /* App.swift in Sources */,
@@ -434,6 +440,7 @@
 				DEVELOPMENT_TEAM = 2M3UVPX9B2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GymTreker/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Gym treker";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -469,6 +476,7 @@
 				DEVELOPMENT_TEAM = 2M3UVPX9B2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GymTreker/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Gym treker";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
