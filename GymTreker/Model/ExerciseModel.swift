@@ -11,7 +11,7 @@ struct ExerciseModel: Identifiable, Codable, Equatable {
 		var weight: Double
 	}
 
-	enum Weight: String, Codable {
+	enum Weight: String, Codable, CaseIterable {
 		case free
 		case double
 		case own

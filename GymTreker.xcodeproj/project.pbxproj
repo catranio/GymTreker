@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		450A6BDC2B42EC21004DFA69 /* ExerciesEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450A6BDB2B42EC21004DFA69 /* ExerciesEditView.swift */; };
 		450A6BDE2B42EE3B004DFA69 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450A6BDD2B42EE3B004DFA69 /* ExerciseModel.swift */; };
+		45127F0A2B4DAC0C00B8CC9F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45127F092B4DAC0C00B8CC9F /* View.swift */; };
+		45127F0C2B4DAC6100B8CC9F /* ChipsStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45127F0B2B4DAC6100B8CC9F /* ChipsStack.swift */; };
 		453702CD2B49882B00987A81 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453702CC2B49882B00987A81 /* SwiftUIView.swift */; };
 		4546A61B2B4C610200F5B3CC /* UTType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546A61A2B4C610200F5B3CC /* UTType.swift */; };
 		455BB8682B3B63AC00092E85 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455BB8672B3B63AC00092E85 /* App.swift */; };
@@ -30,6 +32,7 @@
 		45B030D02B45DA0800B6879E /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B030CF2B45DA0800B6879E /* SwipeView.swift */; };
 		45B030D22B45E2BB00B6879E /* CollapsibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B030D12B45E2BB00B6879E /* CollapsibleView.swift */; };
 		45C163872B3DA84E009717C5 /* exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = 45C163862B3DA84E009717C5 /* exercises.json */; };
+		45CD21272B4C688F009E2C23 /* CreateCastomExercieseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CD21262B4C688F009E2C23 /* CreateCastomExercieseView.swift */; };
 		45D84CB82B3C61EA00F8443A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D84CB72B3C61EA00F8443A /* Buttons.swift */; };
 		45D84CBA2B3C62DF00F8443A /* CreateWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D84CB92B3C62DF00F8443A /* CreateWorkoutView.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +40,8 @@
 /* Begin PBXFileReference section */
 		450A6BDB2B42EC21004DFA69 /* ExerciesEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciesEditView.swift; sourceTree = "<group>"; };
 		450A6BDD2B42EE3B004DFA69 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
+		45127F092B4DAC0C00B8CC9F /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		45127F0B2B4DAC6100B8CC9F /* ChipsStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsStack.swift; sourceTree = "<group>"; };
 		453702CC2B49882B00987A81 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		4546A61A2B4C610200F5B3CC /* UTType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTType.swift; sourceTree = "<group>"; };
 		455BB8642B3B63AC00092E85 /* GymTreker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymTreker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +65,7 @@
 		45B030D12B45E2BB00B6879E /* CollapsibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleView.swift; sourceTree = "<group>"; };
 		45C163862B3DA84E009717C5 /* exercises.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exercises.json; sourceTree = "<group>"; };
 		45CD21232B4C651C009E2C23 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45CD21262B4C688F009E2C23 /* CreateCastomExercieseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCastomExercieseView.swift; sourceTree = "<group>"; };
 		45D84CB72B3C61EA00F8443A /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		45D84CB92B3C62DF00F8443A /* CreateWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +137,7 @@
 				4573B5CD2B3CC4A30020226C /* ExercisesListView.swift */,
 				450A6BDB2B42EC21004DFA69 /* ExerciesEditView.swift */,
 				45B030CD2B45BDA800B6879E /* ExerciesesSelectedView.swift */,
+				45CD21262B4C688F009E2C23 /* CreateCastomExercieseView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -154,6 +161,7 @@
 				45B030C72B452FDD00B6879E /* Button.swift */,
 				45B030CB2B45499900B6879E /* Array.swift */,
 				4546A61A2B4C610200F5B3CC /* UTType.swift */,
+				45127F092B4DAC0C00B8CC9F /* View.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -184,6 +192,7 @@
 				45B030CF2B45DA0800B6879E /* SwipeView.swift */,
 				45B030D12B45E2BB00B6879E /* CollapsibleView.swift */,
 				453702CC2B49882B00987A81 /* SwiftUIView.swift */,
+				45127F0B2B4DAC6100B8CC9F /* ChipsStack.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -292,10 +301,13 @@
 				455BB8802B3B847000092E85 /* CreateNewWorkoutView.swift in Sources */,
 				45B030CC2B45499900B6879E /* Array.swift in Sources */,
 				456FB2122B4B607F0072C83D /* DropViewDelegate.swift in Sources */,
+				45127F0A2B4DAC0C00B8CC9F /* View.swift in Sources */,
 				45B030D22B45E2BB00B6879E /* CollapsibleView.swift in Sources */,
 				455BB87E2B3B802300092E85 /* CustomView.swift in Sources */,
 				45A580282B3DB31700D69DF6 /* Color.swift in Sources */,
 				450A6BDE2B42EE3B004DFA69 /* ExerciseModel.swift in Sources */,
+				45CD21272B4C688F009E2C23 /* CreateCastomExercieseView.swift in Sources */,
+				45127F0C2B4DAC6100B8CC9F /* ChipsStack.swift in Sources */,
 				450A6BDC2B42EC21004DFA69 /* ExerciesEditView.swift in Sources */,
 				45B030CE2B45BDA800B6879E /* ExerciesesSelectedView.swift in Sources */,
 				4546A61B2B4C610200F5B3CC /* UTType.swift in Sources */,

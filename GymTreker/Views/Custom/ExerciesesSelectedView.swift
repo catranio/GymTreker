@@ -1,15 +1,5 @@
 import SwiftUI
 
-struct DropMoveViewDelegate: DropDelegate {
-	func performDrop(info: DropInfo) -> Bool {
-		true
-	}
-
-	func dropUpdated(info: DropInfo) -> DropProposal? {
-		DropProposal(operation: .move)
-	}
-}
-
 struct SetsEditView: View {
 	@Binding var type: ExerciseModel.Weight
 	@Binding var sets: [ExerciseModel.Set]

@@ -6,6 +6,7 @@ struct ExercisesListView: View {
 	@State private var searchText = ""
 	@State private var selection = Set<UUID>()
 	@Environment(\.presentationMode) var presentationMode
+	@State private var isPresentEditExercise = false
 
 	var body: some View {
 		NavigationView {
@@ -55,6 +56,17 @@ struct ExercisesListView: View {
 			}
 			.navigationTitle("Exercises")
 			.navigationBarTitleDisplayMode(.automatic)
+			.toolbar {
+				Button {
+					isPresentEditExercise = true
+				} label: {
+					Text("New exercise")
+				}
+				.buttonStyle(.secondary, font: .callout)
+				.sheet(isPresented: $isPresentEditExercise) {
+					CreateCastomExercieseView()
+				}
+			}
 		}
 	}
 
